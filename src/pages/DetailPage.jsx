@@ -35,7 +35,6 @@ const DetailPage = () => {
 
     return (
         <>
-            {/* {console.log('isi', (pokemon))} */}
             {
                 loading ?
                     <LoadingPage />

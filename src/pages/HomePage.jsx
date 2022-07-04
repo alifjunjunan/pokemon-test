@@ -24,10 +24,8 @@ const HomePage = () => {
   }
   const getPokemon = async (id) => {
     try {
-      setLoading(true)
       let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
       let resColor = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
-      console.log(res.request.status)
       tempArr.push({
         id: res.data.id,
         name: res.data.name,
@@ -39,7 +37,6 @@ const HomePage = () => {
         setPokemon(tempArr)
       }, 600);
     } catch (error) {
-      console.log(error)
       if (error.request.status === 404) {
         setLoading(false)
         setPokemon([])
