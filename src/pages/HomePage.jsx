@@ -33,9 +33,9 @@ const HomePage = () => {
         color: colorRGB[resColor.data.color.name]
       })
       setTimeout(() => {
-        setLoading(false)
         setPokemon(tempArr)
-      }, 600);
+        setLoading(false)
+      }, 700);
     } catch (error) {
       if (error.request.status === 404) {
         setLoading(false)

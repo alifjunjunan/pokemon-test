@@ -43,7 +43,7 @@ const DetailPage = () => {
                         <Text fontWeight='semibold' fontSize='30px' textAlign='center' mb='20px'>Detail pokemon</Text>
                         <Box w='100%' borderRadius='15px' boxShadow='lg' backgroundColor='#E7EDE4'>
                             <Box display='flex' flexDirection={{ base: 'column', sm: 'column', md: 'row' }} >
-                                <Box fontWeight='semibold' color='#f7f1e3' textShadow='1px 1px 1.5px #000' fontSize='18px' flexGrow='1' p='40px' backgroundColor={pokemon.color} borderTopLeftRadius='15px' borderTopRightRadius={{ base: '15px', md: '0' }} borderBottomLeftRadius={{ base: '0', md: '15px' }}>
+                                <Box fontWeight='semibold' color='#f7f1e3' textShadow='1px 1px 1.5px #000' fontSize='18px' flexGrow='1' p='50px 12px' backgroundColor={pokemon.color} borderTopLeftRadius='15px' borderTopRightRadius={{ base: '15px', md: '0' }} borderBottomLeftRadius={{ base: '0', md: '15px' }}>
                                     <Image w={{ base: '250px', sm: '250px', md: '250px', lg: '300px' }} m='0 auto' src={pokemon.image} alt='pokemon' />
                                     <Box display='flex' justifyContent='space-between'>
                                         <Text>Name:</Text>
@@ -63,7 +63,9 @@ const DetailPage = () => {
                                     </Box>
                                     <Box display='flex' justifyContent='space-between'>
                                         <Text>Abilities:</Text>
-                                        <Text>{pokemon.ability && pokemon.ability.map((value, index) => pokemon.ability.length - 1 === index ? `${value.ability.name}` : `${value.ability.name}, `)}</Text>
+                                        <Text>{pokemon.ability && pokemon.ability.map((value, index) => {
+                                            if(index < 2) return  index === 1 ? `${value.ability.name}` : `${value.ability.name}, `
+                                        })}</Text>
                                     </Box>
                                 </Box>
                                 <Box w={{ base: '100%', sm: '100%', md: '60%' }} position='relative' right={{ base: '0', md: '20px' }} top={{ base: '-30px', md: '0' }} flexGrow='1' p={{ base: '20px', sm: '20px', md: '50px' }} backgroundColor='#E7EDE4' borderRadius='25px'>
