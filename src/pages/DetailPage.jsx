@@ -43,7 +43,7 @@ const DetailPage = () => {
                         <Text fontWeight='semibold' fontSize='30px' textAlign='center' mb='20px'>Detail pokemon</Text>
                         <Box w='100%' borderRadius='15px' boxShadow='lg' backgroundColor='#E7EDE4'>
                             <Box display='flex' flexDirection={{ base: 'column', sm: 'column', md: 'row' }} >
-                                <Box fontWeight='semibold' color='#f7f1e3' textShadow='1px 1px 1.5px #000' fontSize='18px' flexGrow='1' p='50px' backgroundColor={pokemon.color} borderTopLeftRadius='15px' borderTopRightRadius={{ base: '15px', md: '0' }} borderBottomLeftRadius={{ base: '0', md: '15px' }}>
+                                <Box fontWeight='semibold' color='#f7f1e3' textShadow='1px 1px 1.5px #000' fontSize='18px' flexGrow='1' p='40px' backgroundColor={pokemon.color} borderTopLeftRadius='15px' borderTopRightRadius={{ base: '15px', md: '0' }} borderBottomLeftRadius={{ base: '0', md: '15px' }}>
                                     <Image w={{ base: '250px', sm: '250px', md: '250px', lg: '300px' }} m='0 auto' src={pokemon.image} alt='pokemon' />
                                     <Box display='flex' justifyContent='space-between'>
                                         <Text>Name:</Text>
@@ -59,7 +59,7 @@ const DetailPage = () => {
                                     </Box>
                                     <Box display='flex' justifyContent='space-between' my='10px'>
                                         <Text>Weight:</Text>
-                                        <Text>{Number(pokemon.weight) * 0.1} Kg</Text>
+                                        <Text>{(Number(pokemon.weight) * 0.1).toFixed(1)} Kg</Text>
                                     </Box>
                                     <Box display='flex' justifyContent='space-between'>
                                         <Text>Abilities:</Text>
